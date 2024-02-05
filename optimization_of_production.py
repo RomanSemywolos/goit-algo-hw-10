@@ -11,10 +11,10 @@ fruit_juice = pulp.LpVariable(name="FruitJuice", lowBound=0, cat="Integer")
 model += lemonade + fruit_juice
 
 # Додавання обмежень
-model += 2 * lemonade + fruit_juice <= 100 
-model += lemonade <= 50
-model += lemonade <= 30
-model += 2 * fruit_juice + lemonade <= 40
+model += 2 * lemonade + fruit_juice <= 100  # Вода
+model += lemonade <= 50                     # Цукор
+model += lemonade <= 30                     # Лимонний сік
+model += 2 * fruit_juice <= 40              # Фруктове пюре
 
 # Розв'язання моделі
 model.solve()
